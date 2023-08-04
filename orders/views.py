@@ -83,6 +83,7 @@ class OrderIdView(generics.GenericAPIView):
 class UpdateOrderStatusView(generics.GenericAPIView):
     
     serializer_class=serializers.OrderStatusUpdateSerializer
+    permission_classes=[IsAdminUser]
 
     # @swagger_auto_schema(operation_summary="Update the status of an order")
     def put(self, request,order_id):
