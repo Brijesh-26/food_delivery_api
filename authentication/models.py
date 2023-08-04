@@ -40,7 +40,7 @@ class CustomUserManager(BaseUserManager):
 class User(AbstractUser):
     username=models.CharField(('Username'), max_length=40,unique=True)
     email=models.CharField(('Email'), max_length=80,unique=True)
-    phone_number=PhoneNumberField(unique=True,null=False,blank=False)
+    phone_number=PhoneNumberField(null=False,blank=False)
     date_joined=models.DateTimeField(('Date'),auto_now_add=True)
 
 

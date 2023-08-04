@@ -44,7 +44,7 @@ AUTH_USER_MODEL = "authentication.User"
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
-    'corsheaders.middleware.CorsMiddleware',   # for jwt
+    'corsheaders.middleware.CorsMiddleware',  
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -170,6 +170,5 @@ SIMPLE_JWT = {
 
 # when we'll add it to frontend then we'll change the ports
 CORS_ALLOWED_ORIGINS = [
-    "*"
 ]
 

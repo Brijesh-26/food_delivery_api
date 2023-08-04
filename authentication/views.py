@@ -13,6 +13,7 @@ class UserSerializer(generics.GenericAPIView):
         data=request.data
 
         serializer=self.serializer_class(data=request.data)
+        
 
         if serializer.is_valid():
             serializer.save()
