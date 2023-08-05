@@ -147,7 +147,7 @@ REST_FRAMEWORK= {
 
 SPECTACULAR_SETTINGS = {
     'TITLE': 'Foodie Project API',
-    'DESCRIPTION': 'A food delivery api for frontend engineers',
+    'DESCRIPTION': 'A food delivery api for frontend engineers, where you get jwt authorization and all the basic opeartion if you have any issue try to contact on this djangowork97@gmail.com',
 }
 
 
