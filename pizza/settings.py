@@ -26,7 +26,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'drf_yasg',
+  
     'authentication',
     'orders',
     'rest_framework',
@@ -34,6 +34,8 @@ INSTALLED_APPS = [
     # for jwt
     'rest_framework_simplejwt',
     'corsheaders',
+    
+    'drf_spectacular',
 ]
 
 
@@ -41,6 +43,7 @@ INSTALLED_APPS = [
 
 # for implementing our custom user model
 AUTH_USER_MODEL = "authentication.User"
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -130,10 +133,21 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 #for jwt
 REST_FRAMEWORK= {
+    
+    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
+    
+    
+    
     'NON_FIELD_ERRORS_KEY': 'error',
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     )
+}
+
+
+SPECTACULAR_SETTINGS = {
+    'TITLE': 'Foodie Project API',
+    'DESCRIPTION': 'A food delivery api for frontend engineers',
 }
 
 

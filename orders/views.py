@@ -9,6 +9,7 @@ from django.contrib.auth import get_user_model
 # from drf_yasg.utils import swagger_auto_schema
 
 
+
 User=get_user_model()
 
 class OrderView(generics.GenericAPIView):
@@ -104,7 +105,7 @@ class UpdateOrderStatusView(generics.GenericAPIView):
     
 class UserOrdersView(generics.GenericAPIView):
     serializer_class=serializers.OrderSerializer
-    permission_classes=[IsAuthenticated,IsAdminUser]
+    permission_classes=[IsAuthenticated]
 
     # @swagger_auto_schema(operation_summary="Get all orders made by a specific user")
     def get(self,request,user_id):
@@ -118,7 +119,7 @@ class UserOrdersView(generics.GenericAPIView):
 
 class UserOrderDetailView(generics.GenericAPIView):
     serializer_class=serializers.OrderSerializer
-    permission_classes=[IsAuthenticated,IsAdminUser]
+    permission_classes=[IsAuthenticated]
 
     # @swagger_auto_schema(operation_summary="Get the detail of an order made by a specific user")
     def get(self,request,user_id,order_id):
@@ -130,3 +131,6 @@ class UserOrderDetailView(generics.GenericAPIView):
         serializer=self.serializer_class(instance=order)
 
         return Response(data=serializer.data,status=status.HTTP_200_OK)
+
+
+
